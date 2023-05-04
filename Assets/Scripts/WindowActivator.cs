@@ -22,7 +22,7 @@ public class WindowActivator : MonoBehaviour
         if (Display.displays.Length > 1)
         {
             // Activate the display 1 (second monitor connected to the system).
-            Display.displays[1].Activate(0, 0, new RefreshRate() { numerator = 60, denominator = 1 });
+            Display.displays[1].Activate(1920, 1080, new RefreshRate() { numerator = 60, denominator = 1 });
         }
     }
 }
