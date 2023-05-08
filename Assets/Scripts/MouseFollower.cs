@@ -8,10 +8,10 @@ public class MouseFollower : MonoBehaviour
 
     void Update()
     {
-        var mouse = UnityEngine.InputSystem.Mouse.current;
-        var mouseDisplayIdx = mouse.displayIndex.ReadValue();
-        var cam = cameras[mouseDisplayIdx];
-        var mouseWorldPos = cam.ScreenToWorldPoint(mouse.position.ReadValue());
+        var mousePos = Input.mousePosition;
+        var displayIdx = mousePos.z;
+        var cam = cameras[(int)displayIdx];
+        var mouseWorldPos = cam.ScreenToWorldPoint(mousePos);
         transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, 2);
     }
 }
